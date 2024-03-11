@@ -2,48 +2,78 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hello</title>
-
-    <link
-      href="https://fonts.font.im/css?family=Open+Sans"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script src="js/main.js" defer></script>
+    <title>个人介绍页面</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        line-height: 1.6;
+        color: #666;
+      }
+      .profile-picture {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .social-links {
+        list-style: none;
+        padding: 0;
+      }
+      .social-links li {
+        display: inline;
+        margin-right: 10px;
+      }
+      .social-links a {
+        text-decoration: none;
+        color: #333;
+      }
+      .social-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
-
   <body>
-    <!-- <div class="flexbox-container">
-      <div class="flexbox-item flexbox-item-1"></div>
-      <div class="flexbox-item flexbox-item-2"></div>
-      <div class="flexbox-item flexbox-item-3"></div>
-    </div> -->
-    <button>切换用户</button>
-    <h1>awfa</h1>
-    <p>
-      Mozilla 是一个全球社区，这里聚集着来自五湖四海的 Mozilla
-      是一个全球社区，这里聚集着来自五湖四海的撒大苏打 Mozilla
-      是一个全球社区，这里聚集着来自五湖四海的撒大苏打 Mozilla
-      是一个全球社区，这里聚集着来自五湖四海的撒大苏打 Mozilla
-      是一个全球社区，这里聚集着来自五湖四海的撒大苏打
+    <div class="container">
+      <img
+        src="your-profile-picture.jpg"
+        alt="Profile Picture"
+        class="profile-picture"
+      />
+      <h1>你的名字</h1>
+      <p>这里是你的个人简介，可以介绍你的职业、技能、兴趣等。</p>
+      <p>
+        例如，我是一名前端开发者，专注于HTML、CSS和JavaScript。我喜欢在业余时间探索新技术和阅读科技相关的书籍。
+      </p>
 
-      <span>spspsp</span>
-    </p>
-    <a href="https://www.mozilla.org/zh-CN/about/manifesto/">Mozilla 宣言</a>
-    <ul>
-      <li>技术人员</li>
-      <li>思考者</li>
-      <li>建造者</li>
-    </ul>
-    <ol>
-      <li>技术人员</li>
-      <li>思考者</li>
-      <li>建造者</li>
-    </ol>
-    <p>我们致力于……</p>
-   
+      <h2>技能</h2>
+      <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript & jQuery</li>
+        <li>React & Vue.js</li>
+        <li>Git & GitHub</li>
+      </ul>
+
+      <h2>社交媒体</h2>
+      <ul class="social-links">
+        <li><a href="https://github.com/yourusername">GitHub</a></li>
+        <li><a href="https://twitter.com/yourusername">Twitter</a></li>
+        <li><a href="https://linkedin.com/in/yourusername">LinkedIn</a></li>
+      </ul>
+    </div>
   </body>
 </html>
