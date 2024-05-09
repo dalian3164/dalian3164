@@ -1473,10 +1473,47 @@
     <div class="fx-sound" id="fx-click">
       <embed src="sounds/click.mp3" />
     </div>
+    <button
+      id="installPWA"
+      style="
+        position: fixed;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+      "
+    >
+      安装应用
+    </button>
+
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js", { scope: "/" });
       }
+      let deferredPrompt;
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        // 阻止 Chrome 67 以前版本的默认事件
+        e.preventDefault();
+        // 保存事件
+        deferredPrompt = e;
+      });
+      document.getElementById("installPWA").addEventListener("click", (e) => {
+        console.log("点击安装");
+        // 弹出安装提示
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          // 等待用户的操作结果
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === "accepted") {
+              console.log("用户接受了安装");
+            } else {
+              console.log("用户拒绝了安装");
+            }
+            deferredPrompt = null;
+          });
+        }
+      });
     </script>
   </body>
 </html>
