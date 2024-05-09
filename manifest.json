@@ -1,0 +1,17 @@
+{
+  "lang": "en",
+  "name": "蛇梯棋小游戏",
+  "short_name": "蛇梯棋",
+  "description": "蛇梯棋小游戏，支持多人对战。",
+  "start_url": "/",
+  "background_color": "#2f3d58",
+  "theme_color": "#2f3d58",
+  "orientation": "any",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/icon512.png",
+      "sizes": "512x512"
+    }
+  ]
+}
