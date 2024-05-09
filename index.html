@@ -1528,29 +1528,19 @@
       });
       document.getElementById("notifi").addEventListener("click", (e) => {
         console.log("发一条通知");
-        let games = [
-          {
-            name: "游戏1",
-            author: "作者1",
-          },
-          {
-            name: "游戏2",
-            author: "作者2",
-          },
-          {
-            name: "游戏3",
-            author: "作者3",
-          },
-        ];
-        var randomItem = Math.floor(Math.random() * games.length);
-        var notifTitle = games[randomItem].name;
-        var notifBody = "Created by " + games[randomItem].author + ".";
-        var notifImg = "icon512.png";
-        var options = {
-          body: notifBody,
-          icon: notifImg,
-        };
-        var notif = new Notification(notifTitle, options);
+        navigator.serviceWorker.getRegistration().then(function (registration) {
+          registration
+            .showNotification("你好", {
+              body: "这是一条通知",
+              icon: "icon512.png",
+            })
+            .then(function () {
+              // 通知展现成功
+            })
+            .catch(function (e) {
+              // 通知展现未授权
+            });
+        });
       });
     </script>
   </body>

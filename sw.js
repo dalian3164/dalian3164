@@ -36,6 +36,7 @@ self.addEventListener("fetch", (event) => {
 });
 // Listen to push events.
 self.addEventListener("push", (event) => {
+  console.log("Push event received", event.data.text());
   // Check if the user has granted permission to display notifications.
   if (Notification.permission === "granted") {
     // Get the notification data from the server.
