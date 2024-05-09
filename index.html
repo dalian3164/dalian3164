@@ -1473,18 +1473,22 @@
     <div class="fx-sound" id="fx-click">
       <embed src="sounds/click.mp3" />
     </div>
-    <button
-      id="installPWA"
+    <div
       style="
         position: fixed;
         top: 50px;
         left: 50%;
         transform: translateX(-50%);
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
         z-index: 999;
       "
     >
-      安装应用
-    </button>
+      <button id="installPWA">安装应用</button>
+      <button id="push">申请推送权限</button>
+      <button id="notifi">发一条通知</button>
+    </div>
 
     <script>
       if ("serviceWorker" in navigator) {
@@ -1513,6 +1517,40 @@
             deferredPrompt = null;
           });
         }
+      });
+      document.getElementById("push").addEventListener("click", (e) => {
+        console.log("申请推送权限");
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            console.log("用户同意了推送");
+          }
+        });
+      });
+      document.getElementById("notifi").addEventListener("click", (e) => {
+        console.log("发一条通知");
+        let games = [
+          {
+            name: "游戏1",
+            author: "作者1",
+          },
+          {
+            name: "游戏2",
+            author: "作者2",
+          },
+          {
+            name: "游戏3",
+            author: "作者3",
+          },
+        ];
+        var randomItem = Math.floor(Math.random() * games.length);
+        var notifTitle = games[randomItem].name;
+        var notifBody = "Created by " + games[randomItem].author + ".";
+        var notifImg = "icon512.png";
+        var options = {
+          body: notifBody,
+          icon: notifImg,
+        };
+        var notif = new Notification(notifTitle, options);
       });
     </script>
   </body>

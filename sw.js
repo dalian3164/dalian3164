@@ -34,3 +34,23 @@ self.addEventListener("fetch", (event) => {
     })()
   );
 });
+// Listen to push events.
+self.addEventListener("push", (event) => {
+  // Check if the user has granted permission to display notifications.
+  if (Notification.permission === "granted") {
+    // Get the notification data from the server.
+    const notificationText = event.data.text();
+
+    // Display a notification.
+    const showNotificationPromise = self.registration.showNotification(
+      "Sample PWA",
+      {
+        body: notificationText,
+        icon: "icon512.png",
+      }
+    );
+
+    // Keep the service worker running until the notification is displayed.
+    event.waitUntil(showNotificationPromise);
+  }
+});
