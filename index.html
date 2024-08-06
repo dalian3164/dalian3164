@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/snakes-and-ladders.css" />
     <title>Snakes and Ladders</title>
     <link rel="manifest" href="/manifest.json" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </head>
 
   <body>
@@ -1486,7 +1487,7 @@
       "
     >
       <button id="installPWA">安装应用</button>
-      <button id="push">申请推送权限</button>
+      <button id="permission">申请通知权限</button>
       <button id="notifi">发一条通知</button>
     </div>
 
@@ -1518,11 +1519,11 @@
           });
         }
       });
-      document.getElementById("push").addEventListener("click", (e) => {
-        console.log("申请推送权限");
+      document.getElementById("permission").addEventListener("click", (e) => {
+        console.log("申请通知权限");
         Notification.requestPermission().then((permission) => {
           if (permission === "granted") {
-            console.log("用户同意了推送");
+            console.log("用户同意了通知权限");
           }
         });
       });
@@ -1542,6 +1543,13 @@
             });
         });
       });
+    </script>
+
+    <script>
+      //等待页面加载完成弹窗
+      window.onload = function () {
+        alert(window.Telegram.WebApp.initData);
+      };
     </script>
   </body>
 </html>
