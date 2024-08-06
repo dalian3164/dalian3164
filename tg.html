@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telegram Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <h1>Telegram Mini App Parameters</h1>
+    <div id="params"></div>
+
+    <script>
+      // 确保WebApp对象已加载
+      Telegram.WebApp.ready();
+
+      // 获取WebApp相关参数
+      const webAppData = {
+        initData: Telegram.WebApp.initData,
+        initDataUnsafe: Telegram.WebApp.initDataUnsafe,
+        version: Telegram.WebApp.version,
+        colorScheme: Telegram.WebApp.colorScheme,
+        themeParams: Telegram.WebApp.themeParams,
+        viewportHeight: Telegram.WebApp.viewportHeight,
+        viewportStableHeight: Telegram.WebApp.viewportStableHeight,
+        isExpanded: Telegram.WebApp.isExpanded,
+        platform: Telegram.WebApp.platform,
+        isVersionAtLeast: Telegram.WebApp.isVersionAtLeast("6.0"),
+      };
+
+      // 将参数打印到屏幕上
+      const paramsDiv = document.getElementById("params");
+      paramsDiv.innerHTML = JSON.stringify(webAppData, null, 2);
+    </script>
+  </body>
+</html>
