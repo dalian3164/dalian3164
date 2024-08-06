@@ -35,9 +35,7 @@
   </head>
   <body>
     <h1>我是tg小程序</h1>
-    <div>通过tg链接进来的参数为:</div>
-    <div id="start_param"></div>
-    <br />
+ 
     <div>通过tgsdk获取的所有参数:</div>
     <div id="params"></div>
 
@@ -59,9 +57,7 @@
         isVersionAtLeast: Telegram.WebApp.isVersionAtLeast("6.0"),
       };
 
-      // 将参数打印到屏幕上
-      const start_param = document.getElementById("start_param");
-      start_param.innerHTML = JSON.stringify(webAppData, null, 2);
+      
 
       const paramsDiv = document.getElementById("params");
       paramsDiv.innerHTML = JSON.stringify(webAppData, null, 2);
