@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Telegram Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- lucky draw master sdk -->
+    <script src="https://cdn.defo.xyz/twa/lucky-twa-sdk.js"></script>
+    <script>
+      window.luckyTwaSdk.config({
+        token: "nrua2rAmuq",
+      });
+      window.luckyTwaSdk.event("OpenMiniApp");
+      // get original startapp param
+      // const startapp = window.luckyTwaSdk.startapp()
+    </script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -35,7 +45,7 @@
   </head>
   <body>
     <h1>我是tg小程序</h1>
- 
+
     <div>通过tgsdk获取的所有参数:</div>
     <div id="params"></div>
 
@@ -56,8 +66,6 @@
         platform: Telegram.WebApp.platform,
         isVersionAtLeast: Telegram.WebApp.isVersionAtLeast("6.0"),
       };
-
-      
 
       const paramsDiv = document.getElementById("params");
       paramsDiv.innerHTML = JSON.stringify(webAppData, null, 2);
