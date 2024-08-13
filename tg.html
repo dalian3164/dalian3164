@@ -7,14 +7,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <!-- lucky draw master sdk -->
     <script src="https://cdn.defo.xyz/twa/lucky-twa-sdk.js"></script>
-    <script>
-      window.luckyTwaSdk.config({
-        token: "nrua2rAmuq",
-      });
-      window.luckyTwaSdk.event("OpenMiniApp");
-      // get original startapp param
-      // const startapp = window.luckyTwaSdk.startapp()
-    </script>
+    
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -43,6 +36,14 @@
       }
     </style>
   </head>
+  <script>
+    window.luckyTwaSdk.config({
+      token: "nrua2rAmuq",
+    });
+    window.luckyTwaSdk.event("OpenMiniApp");
+    // get original startapp param
+    // const startapp = window.luckyTwaSdk.startapp()
+  </script>
   <body>
     <h1>我是tg小程序</h1>
 
