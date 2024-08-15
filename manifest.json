@@ -13,5 +13,19 @@
       "src": "/icon512.png",
       "sizes": "512x512"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "640x480",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.whatsapp",
+      "id": "com.whatsapp"
+    }
   ]
 }
