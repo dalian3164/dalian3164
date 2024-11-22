@@ -60,7 +60,6 @@
     }
   </script>
   <body>
-    <button onclick="sub()">订阅</button>
     <input
       type="radio"
       name="players"
@@ -1544,20 +1543,22 @@
         deferredPrompt = e;
       });
       document.getElementById("installPWA").addEventListener("click", (e) => {
-        console.log("点击安装");
-        // 弹出安装提示
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          // 等待用户的操作结果
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === "accepted") {
-              console.log("用户接受了安装");
-            } else {
-              console.log("用户拒绝了安装");
-            }
-            deferredPrompt = null;
-          });
-        }
+        sub();
+
+        // console.log("点击安装");
+        // // 弹出安装提示
+        // if (deferredPrompt) {
+        //   deferredPrompt.prompt();
+        //   // 等待用户的操作结果
+        //   deferredPrompt.userChoice.then((choiceResult) => {
+        //     if (choiceResult.outcome === "accepted") {
+        //       console.log("用户接受了安装");
+        //     } else {
+        //       console.log("用户拒绝了安装");
+        //     }
+        //     deferredPrompt = null;
+        //   });
+        // }
       });
       document.getElementById("permission").addEventListener("click", (e) => {
         console.log("申请通知权限");
