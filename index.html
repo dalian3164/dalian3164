@@ -54,8 +54,13 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
   </head>
-
+  <script>
+    function sub() {
+      fbq("track", "Subscribe");
+    }
+  </script>
   <body>
+    <button onclick="sub()">订阅</button>
     <input
       type="radio"
       name="players"
